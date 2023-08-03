@@ -55,9 +55,6 @@ Access the application with URL: http://localhost:9090/employees/search
 
 ```http
   GET /employees/search
-
-  ( Paging )
-  GET /employees/search?page=2
 ```
 
 | Parameter | Type     | Description                |
@@ -65,6 +62,10 @@ Access the application with URL: http://localhost:9090/employees/search
 | `interest` | `string` | **Required**. Employee's one of the interest |
 | `salary` | `string` | **Required**. Employee salary criteria |
 
+Paging
+```http
+  GET /employees/search?page=2
+```
 Sample Request
 ```json
 {
