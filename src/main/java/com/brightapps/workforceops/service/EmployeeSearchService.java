@@ -1,12 +1,14 @@
 package com.brightapps.workforceops.service;
 
-import com.brightapps.workforceops.entity.Employee;
-
-import java.util.List;
+import com.brightapps.workforceops.domain.EmployeeSearchRequest;
+import com.brightapps.workforceops.domain.EmployeeSearchResult;
+import com.brightapps.workforceops.exception.EmployeesNotFoundException;
+import com.brightapps.workforceops.exception.EmployeesSearchFailedException;
+import org.springframework.data.domain.Pageable;
 
 /**
  * @author Carlos Rucker
  */
 public interface EmployeeSearchService {
-    List<Employee> searchEmployeesByInterestAndSalary(String interest, Long salary);
+    EmployeeSearchResult searchEmployeesByInterestAndSalary(EmployeeSearchRequest request, Pageable page) throws EmployeesNotFoundException, EmployeesSearchFailedException;
 }
